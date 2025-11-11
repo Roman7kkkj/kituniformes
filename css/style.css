@@ -19,7 +19,7 @@ body {
    CABEÇALHO FIXO
 ========================== */
 header {
- background: rgba(0, 48, 15, 0.9);
+  background: rgba(0, 48, 15, 0.9);
   color: white;
   padding: 1rem;
   position: sticky;
@@ -27,12 +27,11 @@ header {
   z-index: 100;
   backdrop-filter: blur(6px);
   transition: all 0.3s ease;
-  
 }
 
 header.scrolled {
   background: rgba(0, 48, 15, 0.9);
-  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
 }
 
 .header-content {
@@ -45,7 +44,7 @@ header.scrolled {
 .logo {
   width: 60px;
   height: 60px;
-  filter: drop-shadow(0 0 5px rgba(255,255,255,0.8));
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
 }
 
 /* ==========================
@@ -53,14 +52,14 @@ header.scrolled {
 ========================== */
 .banner {
   position: relative;
-  background-image: url('https://images.unsplash.com/photo-1518091043644-c1d4457512c6?auto=format&fit=crop&w=1500&q=80');
+  background-image: url("https://images.unsplash.com/photo-1518091043644-c1d4457512c6?auto=format&fit=crop&w=1500&q=80");
   background-size: cover;
   background-position: center;
   color: white;
   padding: 6rem 1rem;
   text-align: center;
   animation: zoomBanner 10s ease-in-out infinite alternate;
-  opacity: 90%;
+  opacity: 0.9;
 }
 
 .banner::after {
@@ -108,33 +107,32 @@ header.scrolled {
 /* ==========================
    PRODUTOS
 ========================== */
-/* ===== PRODUTOS ===== */
-/* ===== PRODUTOS ===== */
 .produtos-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
   gap: 25px;
   padding: 2rem;
+  justify-items: center;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .produto {
   background: white;
   border-radius: 15px;
   padding: 1rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
   position: relative;
   overflow: hidden;
 }
 
-/* Removido o brilho colorido */
 .produto:hover {
   transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
-/* Efeito na imagem */
 .produto img {
   width: 100%;
   border-radius: 12px;
@@ -146,7 +144,25 @@ header.scrolled {
   filter: brightness(1.1);
 }
 
-/* Efeito no botão */
+.produto h2 {
+  font-size: 1.1rem;
+  margin-top: 0.8rem;
+}
+
+.produto p {
+  color: #555;
+  margin-top: 5px;
+}
+
+.preco {
+  display: block;
+  margin: 10px 0;
+  font-size: 1.2rem;
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+/* ===== BOTÃO ===== */
 .botao {
   display: inline-block;
   background-color: #007aff;
@@ -177,25 +193,34 @@ footer {
    ANIMAÇÕES
 ========================== */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes zoomBanner {
-  from { background-size: 100%; }
-  to { background-size: 110%; }
+  from {
+    background-size: 100%;
+  }
+  to {
+    background-size: 110%;
+  }
 }
 
 /* ==========================
    RESPONSIVO
 ========================== */
-/* ===== AJUSTE DO PREÇO NO CELULAR ===== */
 @media (max-width: 768px) {
+  .produtos-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
   .produto {
     text-align: center;
   }
@@ -215,5 +240,21 @@ footer {
     display: block;
     margin: 10px auto 0;
     width: fit-content;
+  }
+}
+
+@media (max-width: 480px) {
+  .produtos-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .produto {
+    padding: 12px;
+  }
+
+  .botao {
+    font-size: 0.9rem;
+    padding: 8px 12px;
   }
 }
