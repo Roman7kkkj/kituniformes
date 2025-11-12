@@ -178,6 +178,7 @@ body {
   font-size: 1.1rem;
   margin-bottom: 1.5rem;
 }
+
 /* =========================================================
    🔘 BOTÃO VER OFERTAS (BANNER) VERDE
 ========================================================= */
@@ -202,7 +203,6 @@ body {
   box-shadow: 0 8px 20px rgba(0, 200, 83, 0.6);
 }
 
-
 /* =========================================================
    🔘 BOTÕES UNIFICADOS
 ========================================================= */
@@ -210,7 +210,7 @@ body {
   background-color: #00c853;
   color: white;
   padding: 12px 30px;
-  border-radius: 30px; /* corrigido */
+  border-radius: 30px;
   font-weight: 600;
   text-decoration: none;
   display: inline-block;
@@ -248,22 +248,24 @@ body {
   cursor: pointer;
   position: relative;
   overflow: hidden;
-}
 
-.produto.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.produto:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  /* Alinha conteúdo verticalmente e deixa altura uniforme */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 350px; /* altura mínima uniforme */
 }
 
 .produto img {
   width: 100%;
   border-radius: 12px;
   transition: transform 0.4s ease, filter 0.4s ease;
+  flex-shrink: 0;
+}
+
+.produto:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 .produto:hover img {
@@ -361,7 +363,7 @@ body {
   }
 
   .produtos-container {
-    grid-template-columns: 1fr; /* melhor para telas pequenas */
+    grid-template-columns: 1fr;
     gap: 10px;
   }
 
@@ -378,16 +380,15 @@ body {
   }
 }
 
-
 /* =========================================================
    ⚽ RODAPÉ
 ========================================================= */
 footer {
-  background-color: #000; /* Fundo preto */
-  color: #00c853;         /* Texto verde, combinando com futebol */
-  text-align: center;      /* Centraliza o texto */
-  padding: 20px 0;         /* Espaçamento interno */
-  font-size: 0.9rem;       /* Tamanho do texto */
+  background-color: #000;       /* Fundo preto */
+  color: #00c853;               /* Texto verde */
+  text-align: center;            /* Centraliza o texto */
+  padding: 20px 0;               /* Espaçamento interno */
+  font-size: 0.9rem;             /* Tamanho do texto */
   border-top: 2px solid #00e676; /* Linha verde no topo */
 }
 
