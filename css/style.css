@@ -1,6 +1,6 @@
-/* ==========================
-   RESET E BASE
-========================== */
+/* =========================================================
+   RESET E BASE GERAL
+========================================================= */
 * {
   margin: 0;
   padding: 0;
@@ -15,30 +15,32 @@ body {
   scroll-behavior: smooth;
 }
 
-/* ==========================
-   CABEÇALHO FIXO
-========================== */
-header {
-  background: rgba(0, 48, 15, 0.9);
-  color: white;
-  padding: 1rem;
+/* =========================================================
+   🔝 CABEÇALHO ESTILO EXOOTICS
+========================================================= */
+/* --- Header principal --- */
+.header-exootics {
+  background-color: #000;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
   position: sticky;
   top: 0;
-  z-index: 100;
-  backdrop-filter: blur(6px);
-  transition: all 0.3s ease;
+  z-index: 999;
 }
 
-header.scrolled {
-  background: rgba(0, 48, 15, 0.9);
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
-}
-
-.header-content {
+/* --- Parte superior do header --- */
+.header-top {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 15px;
+  padding: 12px 40px;
+  flex-wrap: wrap;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .logo {
@@ -47,9 +49,103 @@ header.scrolled {
   filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
 }
 
-/* ==========================
-   BANNER
-========================== */
+.titulo-logo {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* --- Barra de busca --- */
+.search-area {
+  flex: 1;
+  max-width: 700px;
+  margin: 10px 20px;
+  display: flex;
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.search-area input {
+  flex: 1;
+  border: none;
+  padding: 10px 15px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.search-area button {
+  background: none;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  color: #333;
+}
+
+/* --- Ícones de usuário --- */
+.user-icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.user-icons a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.3s;
+}
+
+.user-icons a:hover {
+  color: #00e676;
+}
+
+.user-icons span {
+  font-size: 0.8rem;
+  line-height: 1.1;
+}
+
+/* --- Menu inferior --- */
+.header-bottom {
+  background: #111;
+  border-top: 1px solid #222;
+}
+
+.header-bottom ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  flex-wrap: wrap;
+  padding: 8px 0;
+  gap: 25px;
+}
+
+.header-bottom a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.header-bottom a:hover {
+  color: #00e676;
+}
+
+.header-bottom .info {
+  color: #ff9800;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* =========================================================
+   🖼️ BANNER PRINCIPAL
+========================================================= */
 .banner {
   position: relative;
   background-image: url("https://images.unsplash.com/photo-1518091043644-c1d4457512c6?auto=format&fit=crop&w=1500&q=80");
@@ -104,9 +200,9 @@ header.scrolled {
   transform: scale(1.05);
 }
 
-/* ==========================
-   PRODUTOS
-========================== */
+/* =========================================================
+   🛍️ SEÇÃO DE PRODUTOS
+========================================================= */
 .produtos-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
@@ -162,7 +258,9 @@ header.scrolled {
   font-weight: bold;
 }
 
-/* ===== BOTÃO ===== */
+/* =========================================================
+   🔘 BOTÕES
+========================================================= */
 .botao {
   display: inline-block;
   background-color: #007aff;
@@ -179,9 +277,9 @@ header.scrolled {
   transform: scale(1.07);
 }
 
-/* ==========================
-   RODAPÉ
-========================== */
+/* =========================================================
+   ⚽ RODAPÉ
+========================================================= */
 footer {
   background: #0a1a0f;
   color: white;
@@ -189,9 +287,9 @@ footer {
   font-size: 0.9rem;
 }
 
-/* ==========================
-   ANIMAÇÕES
-========================== */
+/* =========================================================
+   ✨ ANIMAÇÕES
+========================================================= */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -212,25 +310,36 @@ footer {
   }
 }
 
-/* ==========================
-   RESPONSIVO
-========================== */
+/* =========================================================
+   📱 RESPONSIVIDADE
+========================================================= */
+@media (max-width: 900px) {
+  .header-top {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 20px;
+  }
+
+  .search-area {
+    width: 100%;
+    max-width: none;
+  }
+
+  .user-icons {
+    justify-content: center;
+  }
+}
+
 @media (max-width: 768px) {
   .produtos-container {
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
   }
 
-  .produto {
-    text-align: center;
-  }
-
   .preco {
     display: inline-block;
     margin: 8px auto;
     font-size: 1.1rem;
-    color: #2e7d32;
-    font-weight: 600;
     background: #e8f5e9;
     padding: 6px 12px;
     border-radius: 8px;
@@ -240,6 +349,12 @@ footer {
     display: block;
     margin: 10px auto 0;
     width: fit-content;
+  }
+
+  .header-bottom ul {
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 0.9rem;
   }
 }
 
@@ -256,5 +371,13 @@ footer {
   .botao {
     font-size: 0.9rem;
     padding: 8px 12px;
+  }
+
+  .titulo-logo {
+    font-size: 1rem;
+  }
+
+  .search-area input {
+    font-size: 0.9rem;
   }
 }
