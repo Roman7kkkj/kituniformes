@@ -146,6 +146,9 @@ body {
 /* =========================================================
    🖼️ BANNER PRINCIPAL
 ========================================================= */
+/* =========================================================
+   🖼️ BANNER PRINCIPAL
+========================================================= */
 .banner {
   position: relative;
   background-image: url("https://images.unsplash.com/photo-1518091043644-c1d4457512c6?auto=format&fit=crop&w=1500&q=80");
@@ -201,7 +204,7 @@ body {
 }
 
 /* =========================================================
-   🛍️ SEÇÃO DE PRODUTOS
+   🛍️ PRODUTOS
 ========================================================= */
 .produtos-container {
   display: grid;
@@ -259,35 +262,6 @@ body {
 }
 
 /* =========================================================
-   🔘 BOTÕES
-========================================================= */
-.botao {
-  display: inline-block;
-  background-color: #007aff;
-  color: white;
-  padding: 10px 15px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.botao:hover {
-  background-color: #005ecb;
-  transform: scale(1.07);
-}
-
-/* =========================================================
-   ⚽ RODAPÉ
-========================================================= */
-footer {
-  background: #0a1a0f;
-  color: white;
-  padding: 1rem;
-  font-size: 0.9rem;
-}
-
-/* =========================================================
    ✨ ANIMAÇÕES
 ========================================================= */
 @keyframes fadeIn {
@@ -331,36 +305,39 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .banner {
+    padding: 4rem 1rem;
+  }
+
+  .banner h2 {
+    font-size: 2rem;
+  }
+
+  .banner p {
+    font-size: 1rem;
+  }
+
   .produtos-container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* Sempre 2 produtos por linha */
     gap: 15px;
-  }
-
-  .preco {
-    display: inline-block;
-    margin: 8px auto;
-    font-size: 1.1rem;
-    background: #e8f5e9;
-    padding: 6px 12px;
-    border-radius: 8px;
-  }
-
-  .botao {
-    display: block;
-    margin: 10px auto 0;
-    width: fit-content;
-  }
-
-  .header-bottom ul {
-    flex-wrap: wrap;
-    gap: 15px;
-    font-size: 0.9rem;
   }
 }
 
 @media (max-width: 480px) {
+  .banner {
+    padding: 3rem 1rem;
+  }
+
+  .banner h2 {
+    font-size: 1.6rem;
+  }
+
+  .banner p {
+    font-size: 0.95rem;
+  }
+
   .produtos-container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* 2 produtos por linha */
     gap: 10px;
   }
 
