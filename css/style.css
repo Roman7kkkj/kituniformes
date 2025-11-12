@@ -18,7 +18,6 @@ body {
 /* =========================================================
    🔝 CABEÇALHO ESTILO EXOOTICS
 ========================================================= */
-/* --- Header principal --- */
 .header-exootics {
   background-color: #000;
   color: #fff;
@@ -28,7 +27,6 @@ body {
   z-index: 999;
 }
 
-/* --- Parte superior do header --- */
 .header-top {
   display: flex;
   justify-content: space-between;
@@ -55,7 +53,6 @@ body {
   letter-spacing: 1px;
 }
 
-/* --- Barra de busca --- */
 .search-area {
   flex: 1;
   max-width: 700px;
@@ -82,7 +79,6 @@ body {
   color: #333;
 }
 
-/* --- Ícones de usuário --- */
 .user-icons {
   display: flex;
   align-items: center;
@@ -108,7 +104,6 @@ body {
   line-height: 1.1;
 }
 
-/* --- Menu inferior --- */
 .header-bottom {
   background: #111;
   border-top: 1px solid #222;
@@ -143,9 +138,6 @@ body {
   gap: 6px;
 }
 
-/* =========================================================
-   🖼️ BANNER PRINCIPAL
-========================================================= */
 /* =========================================================
    🖼️ BANNER PRINCIPAL
 ========================================================= */
@@ -186,21 +178,52 @@ body {
   font-size: 1.1rem;
   margin-bottom: 1.5rem;
 }
-
+/* =========================================================
+   🔘 BOTÃO VER OFERTAS (BANNER) VERDE
+========================================================= */
 .banner-btn {
-  background-color: #00c853;
-  color: white;
-  padding: 12px 30px;
-  border-radius: 30px;
+  background: linear-gradient(45deg, #00c853, #00e676);
+  color: #fff;
+  padding: 14px 40px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.2rem;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: all 0.3s ease;
+  display: inline-block;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.4s ease;
+  box-shadow: 0 6px 15px rgba(0, 200, 83, 0.4);
 }
 
 .banner-btn:hover {
+  background: linear-gradient(45deg, #00e676, #00c853);
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 200, 83, 0.6);
+}
+
+
+/* =========================================================
+   🔘 BOTÕES UNIFICADOS
+========================================================= */
+.botao {
+  background-color: #00c853;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 30px; /* corrigido */
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  border: 2px solid #ffffff;
+  transition: all 0.3s ease;
+}
+
+.botao:hover {
   background-color: #00e676;
+  border-color: #ffffff;
   transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* =========================================================
@@ -225,6 +248,11 @@ body {
   cursor: pointer;
   position: relative;
   overflow: hidden;
+}
+
+.produto.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .produto:hover {
@@ -276,12 +304,8 @@ body {
 }
 
 @keyframes zoomBanner {
-  from {
-    background-size: 100%;
-  }
-  to {
-    background-size: 110%;
-  }
+  from { background-size: 100%; }
+  to { background-size: 110%; }
 }
 
 /* =========================================================
@@ -318,7 +342,7 @@ body {
   }
 
   .produtos-container {
-    grid-template-columns: repeat(2, 1fr); /* Sempre 2 produtos por linha */
+    grid-template-columns: repeat(2, 1fr);
     gap: 15px;
   }
 }
@@ -337,17 +361,12 @@ body {
   }
 
   .produtos-container {
-    grid-template-columns: repeat(2, 1fr); /* 2 produtos por linha */
+    grid-template-columns: 1fr; /* melhor para telas pequenas */
     gap: 10px;
   }
 
   .produto {
     padding: 12px;
-  }
-
-  .botao {
-    font-size: 0.9rem;
-    padding: 8px 12px;
   }
 
   .titulo-logo {
@@ -357,4 +376,22 @@ body {
   .search-area input {
     font-size: 0.9rem;
   }
+}
+
+
+/* =========================================================
+   ⚽ RODAPÉ
+========================================================= */
+footer {
+  background-color: #000; /* Fundo preto */
+  color: #00c853;         /* Texto verde, combinando com futebol */
+  text-align: center;      /* Centraliza o texto */
+  padding: 20px 0;         /* Espaçamento interno */
+  font-size: 0.9rem;       /* Tamanho do texto */
+  border-top: 2px solid #00e676; /* Linha verde no topo */
+}
+
+footer p {
+  margin: 0;
+  font-weight: 500;
 }
